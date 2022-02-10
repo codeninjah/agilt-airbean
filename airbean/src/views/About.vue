@@ -1,6 +1,6 @@
 <template>
   <div class="about-view">
-    <header>headerimg</header>
+    <Header/>
     <section>
       <h1>Vårt kaffe</h1>
       <p><strong>Pumpkin spice mug, barista cup, sit macchiato, kopi-luwak, doppio, grounds dripper, crema, strong whipped, variety extra iced id lungo half and half mazagran. Pumpkin spice.
@@ -20,8 +20,10 @@
 </template>
 
 <script>
-export default {
+import Header from '@/components/Header.vue'
 
+export default{
+  components: { Header }
 }
 </script>
 
