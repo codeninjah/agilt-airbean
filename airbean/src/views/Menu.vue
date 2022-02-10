@@ -3,8 +3,10 @@
         <Header/>
         <ul v-for="item in items" :key="item.id"> 
             <li> <img :src="addBtnImg">
-                <p>{{item.title}}...........{{item.price}} kr</p>
-                <p>{{item.desc}}</p>
+                <div class="name-price"><p class="name">{{item.title}}</p> 
+                <p class="price">{{item.price}} kr</p>
+                </div>
+                <p class="description">{{item.desc}}</p>
             </li>
         </ul>
     </div>
@@ -27,13 +29,44 @@ export default {
 
 <style scoped>
 
+.name-price {
+    display: flex;
+}
+
+.name {
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.price {
+    font-size: 30px;
+    position: absolute;
+    right: 1425px;
+}
+
+
+.description {
+    margin-top: -25px;
+    margin-left: 65px;
+    height: 20px;
+}
+
 div {
     background-color: #F3E4E1;
 }
 
 li {
     list-style-type: none;
+    display: flex;
+    flex-flow: wrap;
+    height: 105px;
 }
+
+li p {
+    font-family: arial;
+    font-weight: 500;
+}
+
 
 li img {
     background-color: black;
@@ -41,6 +74,8 @@ li img {
     height: 30px;
     border-radius: 50%;
     border: 10px solid black;
+    margin-top: 30px;
 }
+
 
 </style>
