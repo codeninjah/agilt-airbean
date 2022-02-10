@@ -1,4 +1,5 @@
 <template>
+
 <div class="menu-view">
   <img src="@/assets/graphics/close.svg" class="close-icon"
     @click="$router.push('/')"
@@ -10,6 +11,10 @@
       <router-link to="Status">Orderstatus</router-link>
   </nav>
 </div>
+
+  <div>
+     
+  </div>
 </template>
 
 <script>
@@ -17,6 +22,7 @@ export default {
 
 }
 </script>
+
 
 <style lang="scss" scoped>
 .menu-view{
@@ -48,4 +54,7 @@ export default {
   }
 
 }
+<style>
+
+
 </style>

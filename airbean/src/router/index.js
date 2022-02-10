@@ -6,6 +6,8 @@ import About from '../views/About'
 import Profile from '../views/Profile'
 import Status from '../views/Status'
 
+
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +16,7 @@ const routes = [
     name: 'Nav',
     component: Nav
   },
+
   {
     path: '/Menu',
     name: 'Menu',
@@ -34,6 +37,8 @@ const routes = [
     name: 'Status',
     component: Status
   },
+
+
 ]
 
 const router = new VueRouter({
