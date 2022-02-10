@@ -12,7 +12,6 @@ html, body{
 #app{
   max-width: 500px;
   width: 100vw;
-  max-height: 900px;
   height: 100vh;
 }
 </style>
