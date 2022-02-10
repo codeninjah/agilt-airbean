@@ -12,9 +12,6 @@
   </nav>
 </div>
 
-  <div>
-     
-  </div>
 </template>
 
 <script>
@@ -54,7 +51,5 @@ export default {
   }
 
 }
-<style>
-
 
 </style>
