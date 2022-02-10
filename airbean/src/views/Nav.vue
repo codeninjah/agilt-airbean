@@ -11,7 +11,6 @@
       <router-link to="Status">Orderstatus</router-link>
   </nav>
 </div>
-
 </template>
 
 <script>
@@ -25,7 +24,7 @@ export default {
 .menu-view{
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #2F2926;
   padding: .5rem;
   display: flex;
   flex-direction: column;
@@ -35,7 +34,7 @@ export default {
     height: 20px;
     padding: 8px;
     border-radius: 999px;
-    background-color: white;
+    background-color: #ffffff;
   }
   nav{
     display: flex;
@@ -44,12 +43,11 @@ export default {
     margin: auto;
     a{
       font-size: 32px;
-      color: white;
+      color: #ffffff;
       text-decoration: none;
       margin: 1rem;
     }
   }
 
 }
-
 </style>
