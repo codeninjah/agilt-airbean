@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <p class="menu-btn" @click="toMenuView"><img :src="menuBtnImg"></p>
-        <p class="cart-btn"><img :src="cartMenuImg"></p>
+        <p class="cart-btn"><img :src="cartBtnImg"></p>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default{
 
     data() {return{
         menuBtnImg: require('@/assets/graphics/navicon.svg'),
-        cartMenuImg: require('@/assets/graphics/bag.svg'),
+        cartBtnImg: require('@/assets/graphics/bag.svg'),
     }},
 
     methods: {
@@ -33,7 +33,6 @@ export default{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border: 1px solid black;
     }
 
     .menu-btn {
