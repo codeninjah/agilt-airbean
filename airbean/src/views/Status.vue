@@ -1,4 +1,5 @@
 <template>
+
   <div class="order">
       <p class ="ordernum">Ordernummer #12DV23F</p>
       <p class ="pic"><img :src="pictureOfStatus"></p>
@@ -97,4 +98,7 @@ display: flex;
 align-items: center;
 text-align: center;
 }
+
+
+
 </style>
