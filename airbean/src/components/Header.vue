@@ -11,7 +11,7 @@
 export default{
 
     data() {return{
-        manuBtnImg: require('@/assets/graphics/navicon.svg'),
+        menuBtnImg: require('@/assets/graphics/navicon.svg'),
         cartMenuImg: require('@/assets/graphics/bag.svg'),
     }},
 
