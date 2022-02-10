@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
-        <p class="menu-btn" @click="toMenuView"><img src="~@/assets/graphics/navicon.svg"></p>
-        <p class="cart-btn"><img src="~@/assets/graphics/bag.svg"></p>
+        <p class="menu-btn" @click="toMenuView"><img :src="menuBtnImg"></p>
+        <p class="cart-btn"><img :src="cartMenuImg"></p>
     </div>
 </template>
 
@@ -9,6 +9,11 @@
 
 <script>
 export default{
+
+    data() {return{
+        manuBtnImg: require('@/assets/graphics/navicon.svg'),
+        cartMenuImg: require('@/assets/graphics/bag.svg'),
+    }},
 
     methods: {
         toMenuView(){
