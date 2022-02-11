@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     currentUser: { },
     currentOrder: [],
-    orderHistory: { }
+    orderHistory: []
   },
   mutations: {
     saveUser(state, user){
@@ -17,7 +17,7 @@ export default new Vuex.Store({
       state.currentOrder.push(order)
     },
     saveOrder(state, order){
-      state.orderHistory = {...order}
+      state.orderHistory.push(order)
     }
   },
   actions: {
