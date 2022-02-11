@@ -1,5 +1,6 @@
 <template>
-    <div class="profile-input">
+  <div>
+    <div class="profile-input" v-if="!userInfo.name">
       <Header />
       <section>
         <img :src='logoImg' alt="logo">
@@ -7,9 +8,9 @@
         <p>Genom att skapa ett konto nedan kan du spara och se din orderhistorik.</p>
         <form @submit.prevent="submit">
           <label for="name">Namn</label>
-          <input v-model="user.name" type="text" id="name">
+          <input v-model="user.name" type="text" id="name" required>
           <label for="e-mail">E-post</label>
-          <input v-model="user.email" type="text" id="e-mail">
+          <input v-model="user.email" type="text" id="e-mail" required>
           <span>
             <input v-model="user.gdpr" type="checkbox" name="gdbr">
             <label for="gdpr">GDPR ok!</label>
@@ -18,6 +19,19 @@
         </form>
       </section>
     </div>
+
+    <div class="profile" v-if="userInfo.name">
+      <Header />
+      <section>
+        <p><img :src="userImg" alt="profile"></p>
+        <h1>Test</h1>
+        <p>{{ userInfo.name }}</p>
+        <p>{{ userInfo.email }}</p>
+        <h3>Orderhistorik</h3>
+        <p>{{ orderHistory }}</p>
+      </section>
+    </div>
+  </div>
 </template>
 
 
@@ -31,15 +45,25 @@ export default {
         email: '', 
         gdpr: false
       },
-      logoImg: require('@/assets/graphics/logo-sml.svg')
+      logoImg: require('@/assets/graphics/logo-sml.svg'),
+      userImg: require('@/assets/graphics/profile.svg')
     }},
     methods: {
       submit(){
         if(this.user.gdpr){
+          console.log("User saved")
           this.$store.dispatch('save', this.user)
         }
       }
     }, 
+    computed: {
+      userInfo(){
+        return this.$store.state.currentUser
+      },
+      orderHistory(){
+        return this.$store.state.orderHistory //tom just nu
+      }
+    }
 }
 </script>
 
@@ -105,5 +129,14 @@ export default {
       }
     }
   }
+}
+
+.profile{
+  background-color: #222222;
+    p, h1, h3{
+      color: #FFFFFF;
+      text-align: center;
+      font-family: 'Work Sans', sans-serif;
+    }
 }
 </style>

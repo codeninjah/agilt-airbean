@@ -2,7 +2,7 @@
     <div>
         <Header/>
         <ul> 
-            <li  v-for="item in items" :key="item.id"> <img :src="addBtnImg">
+            <li  v-for="item in items" :key="item.id"> <img :src="addBtnImg" @click="addToCart">
                 <div class="name-price"><p class="name">{{item.title}}</p> 
                     <p class="description">{{item.desc}}</p>
                 </div>
@@ -22,8 +22,18 @@ export default {
 
     data(){return{
         items: menu.menu,
-        addBtnImg: require('@/assets/graphics/add.svg')
-    }}
+        addBtnImg: require('@/assets/graphics/add.svg'),
+        addedItem: {
+            title: "Alex"
+        }
+    }},
+
+    methods: {
+        addToCart(){
+            console.log("Works!")
+            this.$store.dispatch('current', this.addedItem)
+        }
+    }
 }
 </script>
 
@@ -73,6 +83,10 @@ li img {
     height: 30px;
     border-radius: 50%;
     border: 10px solid black;
+}
+
+img:hover{
+    cursor: pointer;
 }
 
 
