@@ -1,12 +1,12 @@
 <template>
     <div>
         <Header/>
-        <ul v-for="item in items" :key="item.id"> 
-            <li> <img :src="addBtnImg">
+        <ul> 
+            <li  v-for="item in items" :key="item.id"> <img :src="addBtnImg">
                 <div class="name-price"><p class="name">{{item.title}}</p> 
-                <p class="price">{{item.price}} kr</p>
+                    <p class="description">{{item.desc}}</p>
                 </div>
-                <p class="description">{{item.desc}}</p>
+                <p class="price">{{item.price}} kr</p>
             </li>
         </ul>
     </div>
@@ -31,24 +31,23 @@ export default {
 
 .name-price {
     display: flex;
+    flex-direction: column;
 }
 
 .name {
     font-size: 30px;
-    margin-left: 15px;
+    margin: 0px;
 }
 
 .price {
     font-size: 30px;
-    position: absolute;
-    right: 1425px;
+    margin: auto 1rem auto auto;
 }
 
 
 .description {
-    margin-top: -25px;
-    margin-left: 65px;
-    height: 20px;
+    padding: 0px;
+    margin: 0px;
 }
 
 div {
@@ -58,8 +57,8 @@ div {
 li {
     list-style-type: none;
     display: flex;
-    flex-flow: wrap;
-    height: 105px;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 li p {
@@ -74,7 +73,6 @@ li img {
     height: 30px;
     border-radius: 50%;
     border: 10px solid black;
-    margin-top: 30px;
 }
 
 
