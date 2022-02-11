@@ -2,7 +2,7 @@
     <div>
         <Header/>
         <ul> 
-            <li  v-for="item in items" :key="item.id"> <img :src="addBtnImg" @click="addToCart">
+            <li  v-for="item in items" :key="item.id"> <img :src="addBtnImg" @click="addToCart(item.id)">
                 <div class="name-price"><p class="name">{{item.title}}</p> 
                     <p class="description">{{item.desc}}</p>
                 </div>
@@ -29,9 +29,11 @@ export default {
     }},
 
     methods: {
-        addToCart(){
-            console.log("Works!")
-            this.$store.dispatch('current', this.addedItem)
+        addToCart(itemId){
+            console.log("Works!" + itemId)
+            const thisItem = this.items.find(item => item.id == itemId)
+            console.log(thisItem.title)
+            this.$store.dispatch('current', thisItem)
         }
     }
 }
