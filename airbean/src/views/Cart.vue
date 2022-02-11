@@ -9,7 +9,8 @@
         <button @click="attToOrderHistory">Take my money!</button>
         <ul>
             <li v-for="item in test" :key="item.id">
-                {{item}} numbers of item is: {{item.length}} and there are {{test.length}} unique items
+                {{item[0]}} numbers of item is: {{item.length}} and there are {{test.length}} unique items in the list.
+                Price for this is: {{item[0].price * item.length}} KR
             </li>
         </ul>
     </div>
@@ -34,8 +35,7 @@
                 const list = this.$store.state.currentOrder
                 return list.filter(item => item.title === item.title)
             },
-            test(){
-                
+            test(){      
                 const list = this.$store.state.currentOrder
                 /*
                 const uniqueObjects = [ ...new Set( list.map( obj => obj.title) ) ].map( title=> { 
@@ -45,7 +45,6 @@
                 return uniqueObjects
                 */
 
-               
                 //const list = this.$store.state.currentOrder
                 //FÖLJANDE VERKAR FUNGERA TILLSAMMANS MED RAD 12
                 const uniqueObjects = [ ...new Set( list.map( obj => obj.title) ) ].map( title=> { 
