@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <p class="menu-btn" @click="toMenuView"><img :src="menuBtnImg"></p>
-        <p class="cart-btn"><img :src="cartBtnImg"></p>
+        <p class="cart-btn"><img :src="cartBtnImg" @click="toCartMenu"></p>
     </div>
 </template>
 
@@ -18,6 +18,9 @@ export default{
     methods: {
         toMenuView(){
             this.$router.push('/')
+        },
+        toCartMenu(){
+            this.$router.push('/Cart')
         }
     }
 

@@ -5,6 +5,7 @@ import Menu from '../views/Menu'
 import About from '../views/About'
 import Profile from '../views/Profile'
 import Status from '../views/Status'
+import Cart from '../views/Cart'
 
 
 
@@ -37,7 +38,11 @@ const routes = [
     name: 'Status',
     component: Status
   },
-
+  {
+    path: '/Cart',
+    name: 'Cart',
+    component: Cart
+  },
 
 ]
 
