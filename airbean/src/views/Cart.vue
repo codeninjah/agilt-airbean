@@ -10,8 +10,9 @@
         <ul>
             <li v-for="item in test" :key="item.id">
                 {{item[0]}} numbers of item is: {{item.length}} and there are {{test.length}} unique items in the list.
-                Price for this is: {{item[0].price * item.length}} KR
+                Price for this is: <span>{{ item[0].price * item.length }}</span> KR
             </li>
+                TOTAL PRICE IS: {{ totalPrice }}
         </ul>
     </div>
 </template>
@@ -23,7 +24,6 @@
             attToOrderHistory(){
                 const thisItem = this.$store.state.currentOrder
                 this.$store.dispatch('order', thisItem)
-                console.log("The order is: ") //Test
                 this.$router.push('/profile')
             }
         },
@@ -53,10 +53,18 @@
                     } )
 
                 return uniqueObjects
-                
 
                 //return list.filter((a, i) => list.findIndex((s) => a.title === s.title) === i) //printar ut de unika items en gång var
                 
+            },
+            totalPrice(){
+                let a = document.getElementsByTagName("span")
+                let sum = 0
+                for(var i = 0; i < a.length; i++){
+                    sum += parseFloat(a[i].innerText)
+                }
+                console.log("Inner text is:" + sum)
+                return sum
             }
         }
     }
