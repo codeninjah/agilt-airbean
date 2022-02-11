@@ -51,10 +51,10 @@ width: 279px;
 height: 37px;
 left: 48px;
 top: 52px;
-padding-left:16px;
 
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: flex;
+justify-content: center;
 align-items: center;
 text-align: center; 
 
@@ -90,9 +90,34 @@ width: 279px;
 height: 37px;
 left: 48px;
 top: 424px;
+
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: flex;
+justify-content: center;
 align-items: center;
 text-align: center;
 }
+
+button{
+position: absolute;
+width: 184px;
+height: 55px;
+ left: 98px; 
+top: 530px;
+
+background: #FFFFFF;
+border-radius: 50px;
+font-family: PT Serif;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 120%;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+position: absolute;
+
+}
+
 </style>
