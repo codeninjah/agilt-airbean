@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     currentUser: { },
     currentOrder: [],
-    orderHistory: []
+    orderHistory: [],
+    landingPage: true
   },
   mutations: {
     saveUser(state, user){
@@ -21,9 +22,15 @@ export default new Vuex.Store({
     },
     saveOrder(state, order){
       state.orderHistory.push(order)
+    }, 
+    toggleLandingPage(state){
+      state.landingPage = false
     }
   },
   actions: {
+    stopLandingPage(context){
+      context.commit('toggleLandingPage')
+    },
     save(context, user){
       context.commit('saveUser', user)
     },

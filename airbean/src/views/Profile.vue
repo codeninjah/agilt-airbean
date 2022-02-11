@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="profile">
     <div class="profile-input" v-if="!userInfo.name">
       <Header />
       <section>
@@ -20,7 +20,7 @@
       </section>
     </div>
 
-    <div class="profile" v-if="userInfo.name">
+    <div class="profile-history" v-else>
       <Header />
       <section>
         <p><img :src="userImg" alt="profile"></p>
@@ -68,6 +68,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.profile{
+  height:100%;
+}
 .profile-input{
   background-color: #2F2926;
   width: 100%;
@@ -131,8 +134,9 @@ export default {
   }
 }
 
-.profile{
+.profile-history{
   background-color: #222222;
+  height:100%;
     p, h1, h3{
       color: #FFFFFF;
       text-align: center;
