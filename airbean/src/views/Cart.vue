@@ -8,8 +8,8 @@
         </ul>
         <button @click="attToOrderHistory">Take my money!</button>
         <ul>
-            <li v-for="item in cartFiltered" :key="item.id">
-                {{item}}
+            <li v-for="item in test" :key="item.id">
+                {{item}} numbers of item is: {{item.length}} and there are {{test.length}} unique items
             </li>
         </ul>
     </div>
@@ -33,6 +33,31 @@
             cartFiltered(){
                 const list = this.$store.state.currentOrder
                 return list.filter(item => item.title === item.title)
+            },
+            test(){
+                
+                const list = this.$store.state.currentOrder
+                /*
+                const uniqueObjects = [ ...new Set( list.map( obj => obj.title) ) ].map( title=> { 
+                         list.find(obj => obj.title === title)
+                         return list
+                    } )
+                return uniqueObjects
+                */
+
+               
+                //const list = this.$store.state.currentOrder
+                //FÖLJANDE VERKAR FUNGERA TILLSAMMANS MED RAD 12
+                const uniqueObjects = [ ...new Set( list.map( obj => obj.title) ) ].map( title=> { 
+                    list.find(obj => obj.title == title).length
+                         return list.filter(item => item.title == title)
+                    } )
+
+                return uniqueObjects
+                
+
+                //return list.filter((a, i) => list.findIndex((s) => a.title === s.title) === i) //printar ut de unika items en gång var
+                
             }
         }
     }
