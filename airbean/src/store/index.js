@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     currentUser: { },
-    currentOrder: { },
+    currentOrder: [],
     orderHistory: { }
   },
   mutations: {
@@ -14,7 +14,7 @@ export default new Vuex.Store({
       state.currentUser = {...user}
     },
     saveCurrentOrder(state, order){
-      state.currentOrder = { ...order}
+      state.currentOrder.push(order)
     },
     saveOrder(state, order){
       state.orderHistory = {...order}
