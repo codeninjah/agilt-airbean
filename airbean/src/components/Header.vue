@@ -54,6 +54,10 @@ export default{
         padding: 15px;
     }
 
+    .menu-btn img{
+        cursor: pointer;
+    }
+
     .cart-btn {
         height: 80px;
         width: 80px;
@@ -67,6 +71,10 @@ export default{
         width: 60px;
         height: 60px;
         margin-top: 10px; 
+    }
+
+    .cart-btn img{
+        cursor: pointer;
     }
 
 </style>

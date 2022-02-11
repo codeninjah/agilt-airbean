@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     currentUser: { },
     currentOrder: [],
-    orderHistory: { },
+    orderHistory: [],
     landingPage: true
   },
   mutations: {
@@ -15,10 +15,13 @@ export default new Vuex.Store({
       state.currentUser = {...user}
     },
     saveCurrentOrder(state, order){
+      console.log("Item is: " + order.title)
+
+      state.currentOrder.filter((order) => (order === order.title)).length;
       state.currentOrder.push(order)
     },
     saveOrder(state, order){
-      state.orderHistory = {...order}
+      state.orderHistory.push(order)
     }, 
     toggleLandingPage(state){
       state.landingPage = false

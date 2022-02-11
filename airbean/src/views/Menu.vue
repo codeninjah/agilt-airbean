@@ -23,16 +23,19 @@ export default {
     data(){return{
         items: menu.menu,
         addBtnImg: require('@/assets/graphics/add.svg'),
-        addedItem: {
-            title: "Alex"
-        }
     }},
 
     methods: {
         addToCart(itemId){
-            console.log("Works!" + itemId)
             const thisItem = this.items.find(item => item.id == itemId)
-            console.log(thisItem.title)
+
+            /* if(thisItem.length >= 1){
+                this.item.amount =+ 1 
+            }
+            else{
+                this.item.amount += 1
+            } */
+
             this.$store.dispatch('current', thisItem)
         }
     }
