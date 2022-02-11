@@ -3,10 +3,15 @@
         <h1>Din beställning</h1>
         <ul>
             <li v-for="item in cart" :key="item.id">
-                {{ item.title }}
+                {{ item.title }} 
             </li>
         </ul>
         <button @click="attToOrderHistory">Take my money!</button>
+        <ul>
+            <li v-for="item in cartFiltered" :key="item.id">
+                {{item}}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -24,6 +29,10 @@
         computed: {
             cart(){
                 return this.$store.state.currentOrder
+            },
+            cartFiltered(){
+                const list = this.$store.state.currentOrder
+                return list.filter(item => item.title === item.title)
             }
         }
     }
