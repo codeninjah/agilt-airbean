@@ -28,6 +28,14 @@ export default {
     methods: {
         addToCart(itemId){
             const thisItem = this.items.find(item => item.id == itemId)
+
+            /* if(thisItem.length >= 1){
+                this.item.amount =+ 1 
+            }
+            else{
+                this.item.amount += 1
+            } */
+
             this.$store.dispatch('current', thisItem)
         }
     }
