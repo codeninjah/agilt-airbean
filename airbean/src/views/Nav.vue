@@ -1,21 +1,38 @@
 <template>
-
-<div class="menu-view">
-  <img src="@/assets/graphics/close.svg" class="close-icon"
-    @click="$router.push('/')"
-  >
-  <nav>
-      <router-link to="Menu">Meny</router-link>
-      <router-link to="About">Vårt kaffe</router-link>
-      <router-link to="Profile">Min profil</router-link>
-      <router-link to="Status">Orderstatus</router-link>
-  </nav>
-</div>
+  <LandingPage v-if='showLandingPage' />
+  <div class="menu-view" v-else>
+    <img src="@/assets/graphics/close.svg" class="close-icon"
+      @click="goBack"
+    >
+    <nav>
+        <router-link to="Menu">Meny</router-link>
+        <router-link to="About">Vårt kaffe</router-link>
+        <router-link to="Profile">Min profil</router-link>
+        <router-link to="Status">Orderstatus</router-link>
+    </nav>
+  </div>
 </template>
 
 <script>
+import LandingPage from '@/views/Landing'
 export default {
-
+  components: {LandingPage},
+  created(){
+    setInterval(()=>{
+      this.$store.dispatch('stopLandingPage')
+    },3000)
+  },
+  methods: {
+    goBack(){
+      console.log(this.$router);
+      this.$router.go(-1)
+    }
+  }, 
+  computed:{
+    showLandingPage(){
+      return this.$store.state.landingPage
+    }
+  }
 }
 </script>
 
