@@ -17,7 +17,8 @@ export default new Vuex.Store({
     saveCurrentOrder(state, order){
       console.log("Item is: " + order.title)
 
-      state.currentOrder.filter((order) => (order === order.title)).length;
+      //state.currentOrder.filter((order) => (order === order.title)).length;
+
       state.currentOrder.push(order)
     },
     saveOrder(state, order){
