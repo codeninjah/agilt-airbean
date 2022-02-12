@@ -19,26 +19,17 @@ export default {
 <style lang='scss' scoped>
 section{
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: #38846D;
-  .intro-left{
-    background-image: url('../assets/graphics/intro-graphic-left.svg');
-    background-size: cover;
-    height: 100%;
-    width: 50%;
-    display: grid;
-    place-items: center;
-    img{
-      width: 25rem;
-      z-index: 3;
+  background-image: url('../assets/graphics/intro-graphic-left.svg'), url('../assets/graphics/intro-graphic-right.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left, right;
+   img{
+      width: 20rem;
     }
-  }
-  .intro-right{
-    background-image: url('../assets/graphics/intro-graphic-right.svg');
-    background-size: cover;
-    height: 100%;
-    width: 50%;
-  }
 }
 </style>
